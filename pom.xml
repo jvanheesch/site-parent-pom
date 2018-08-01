@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.jvanheesch</groupId>
+    <artifactId>site-parent-pom</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.language.source>1.8</java.language.source>
+        <java.language.target>1.8</java.language.target>
+        <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
+        <!--issue with 3.0.0: http://mail-archives.apache.org/mod_mbox/maven-issues/201807.mbox/%3CJIRA.13171112.1531219268000.12675.1531219320064@Atlassian.JIRA%3E-->
+        <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>local-nexus-releases</id>
+            <name>Internal Releases</name>
+            <url>http://localhost:9081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>local-nexus-snapshots</id>
+            <name>Internal Snapshot Releases</name>
+            <url>http://localhost:9081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <site>
+            <id>local-nexus-site</id>
+            <name>Internal Snapshot Releases</name>
+            <url>dav:http://localhost:9081/repository/site/</url>
+        </site>
+    </distributionManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.language.source}</source>
+                        <target>${java.language.target}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site-plugin.version}</version>
+                    <configuration>
+                        <!--https://maven.apache.org/plugins/maven-scm-publish-plugin/examples/multi-module-configuration.html-->
+                        <topSiteURL>${project.distributionManagement.site.url}</topSiteURL>
+                    </configuration>
+                </plugin>
+                <!--TODO_JORIS cleanup-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${maven-project-info-reports-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${maven-project-info-reports-plugin.version}</version>
+                <configuration>
+                    <!--https://stackoverflow.com/a/32354442/1939921-->
+                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>index</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+</project>
