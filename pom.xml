@@ -60,11 +60,11 @@
                             <version>2.8</version>
                         </dependency>
                     </dependencies>
-                    <configuration>
-                        <!--https://maven.apache.org/plugins/maven-scm-publish-plugin/examples/multi-module-configuration.html-->
-                        <!--<topSiteURL>${project.distributionManagement.site.url}</topSiteURL>-->
-                        <topSiteURL>dav:http://localhost:9081/repository/site/</topSiteURL>
-                    </configuration>
+                    <!--<configuration>-->
+                        <!--&lt;!&ndash;https://maven.apache.org/plugins/maven-scm-publish-plugin/examples/multi-module-configuration.html&ndash;&gt;-->
+                        <!--&lt;!&ndash;<topSiteURL>${project.distributionManagement.site.url}</topSiteURL>&ndash;&gt;-->
+                        <!--<topSiteURL>dav:http://localhost:9081/repository/site/</topSiteURL>-->
+                    <!--</configuration>-->
                 </plugin>
                 <!--TODO_JORIS cleanup-->
                 <plugin>
