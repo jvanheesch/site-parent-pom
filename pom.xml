@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!--<parent>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
-        <!--<version>2.0.2.RELEASE</version>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--<version>2.0.2.RELEASE</version>-->
     <!--</parent>-->
 
     <groupId>com.github.jvanheesch</groupId>
@@ -112,6 +112,18 @@
                             <report>dependency-updates-report</report>
                             <report>plugin-updates-report</report>
                             <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.1</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>analyze-report</report>
                         </reports>
                     </reportSet>
                 </reportSets>
