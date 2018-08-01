@@ -61,9 +61,9 @@
                         </dependency>
                     </dependencies>
                     <!--<configuration>-->
-                        <!--&lt;!&ndash;https://maven.apache.org/plugins/maven-scm-publish-plugin/examples/multi-module-configuration.html&ndash;&gt;-->
-                        <!--&lt;!&ndash;<topSiteURL>${project.distributionManagement.site.url}</topSiteURL>&ndash;&gt;-->
-                        <!--<topSiteURL>dav:http://localhost:9081/repository/site/</topSiteURL>-->
+                    <!--&lt;!&ndash;https://maven.apache.org/plugins/maven-scm-publish-plugin/examples/multi-module-configuration.html&ndash;&gt;-->
+                    <!--&lt;!&ndash;<topSiteURL>${project.distributionManagement.site.url}</topSiteURL>&ndash;&gt;-->
+                    <!--<topSiteURL>dav:http://localhost:9081/repository/site/</topSiteURL>-->
                     <!--</configuration>-->
                 </plugin>
                 <!--TODO_JORIS cleanup-->
@@ -79,6 +79,20 @@
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.5</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
