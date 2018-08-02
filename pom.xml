@@ -39,7 +39,7 @@
         <site>
             <id>local-nexus-site</id>
             <name>Internal Snapshot Releases</name>
-            <url>dav:http://localhost:9081/repository/site/</url>
+            <url>scp://localhost:9081/repository/site/</url>
         </site>
     </distributionManagement>
 
