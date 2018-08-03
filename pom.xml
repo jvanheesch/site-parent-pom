@@ -27,17 +27,17 @@
         <repository>
             <id>local-nexus-releases</id>
             <name>Internal Releases</name>
-            <url>http://localhost:9081/repository/maven-releases/</url>
+            <url>http://localhost:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>local-nexus-snapshots</id>
             <name>Internal Snapshot Releases</name>
-            <url>http://localhost:9081/repository/maven-snapshots/</url>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <site>
             <id>local-nexus-site</id>
             <name>Internal Snapshot Releases</name>
-            <url>dav:http://localhost:9081/repository/site/</url>
+            <url>dav:http://localhost:8081/repository/site/</url>
         </site>
     </distributionManagement>
 
