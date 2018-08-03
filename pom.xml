@@ -43,6 +43,12 @@
         </site>
     </distributionManagement>
 
+    <scm>
+        <connection>scm:git:git@github.com:jvanheesch/site-parent-pom.git</connection>
+        <developerConnection>scm:git:git@github.com:jvanheesch/site-parent-pom.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <build>
         <pluginManagement>
             <plugins>
