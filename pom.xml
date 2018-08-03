@@ -21,23 +21,24 @@
         <!--issue with 3.0.0: http://mail-archives.apache.org/mod_mbox/maven-issues/201807.mbox/%3CJIRA.13171112.1531219268000.12675.1531219320064@Atlassian.JIRA%3E-->
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <nexus.port>8081</nexus.port>
     </properties>
 
     <distributionManagement>
         <repository>
             <id>local-nexus-releases</id>
             <name>Internal Releases</name>
-            <url>http://localhost:8081/repository/maven-releases/</url>
+            <url>http://localhost:${nexus.port}/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>local-nexus-snapshots</id>
             <name>Internal Snapshot Releases</name>
-            <url>http://localhost:8081/repository/maven-snapshots/</url>
+            <url>http://localhost:${nexus.port}/repository/maven-snapshots/</url>
         </snapshotRepository>
         <site>
             <id>local-nexus-site</id>
             <name>Internal Snapshot Releases</name>
-            <url>dav:http://localhost:8081/repository/site/</url>
+            <url>dav:http://localhost:${nexus.port}/repository/site/</url>
         </site>
     </distributionManagement>
 
