@@ -10,7 +10,7 @@
 
     <groupId>com.github.jvanheesch</groupId>
     <artifactId>site-parent-pom</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.3</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -45,7 +45,7 @@
     <scm>
         <connection>scm:git:git@github.com:jvanheesch/site-parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:jvanheesch/site-parent-pom.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>site-parent-pom-1.3</tag>
     </scm>
 
     <build>
