@@ -77,6 +77,9 @@
                     <!--&lt;!&ndash;<topSiteURL>${project.distributionManagement.site.url}</topSiteURL>&ndash;&gt;-->
                     <!--<topSiteURL>dav:http://localhost:9081/repository/site/</topSiteURL>-->
                     <!--</configuration>-->
+                    <configuration>
+                        <topSiteURL>dav:http://localhost:${nexus.port}/repository/site/</topSiteURL>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
