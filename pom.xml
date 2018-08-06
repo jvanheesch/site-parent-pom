@@ -39,7 +39,7 @@
         <site>
             <id>local-nexus-site</id>
             <name>Internal Snapshot Releases</name>
-            <url>dav:http://localhost:${nexus.port}/repository/site/</url>
+            <url>dav:http://localhost:${nexus.port}/repository/site/${project.groupId}/${project.version}</url>
         </site>
     </distributionManagement>
 
