@@ -23,6 +23,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <nexus.port>8081</nexus.port>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <sonar.port>9000</sonar.port>
+        <sonar.host.url>http://localhost:${sonar.port}/</sonar.host.url>
     </properties>
 
     <distributionManagement>
